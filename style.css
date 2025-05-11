@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: rgb(29, 107, 146);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .input-area {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    width: 65%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: rgb(35, 26, 162);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: green;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin-top: 20px;
+  }
+  
+  li {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px 35px 10px 10px;
+    border-radius: 5px;
+    position: relative;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task-text {
+    flex-grow: 1;
+    cursor: pointer;
+  }
+  
+  .done {
+    text-decoration: line-through;
+    color: gray;
+    background-color: #ddd;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+  }
+  
+  small {
+    display: block;
+    font-size: 10px;
+    color: #888;
+    margin-top: 5px;
+  }
+  #todo-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-right: 10px;
+  }
+  
+  
+  @media (max-width: 500px) {
+    .container {
+      padding: 15px;
+    }
+  
+    input {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .input-area {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    li {
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    li button {
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  }
+  
+  
