@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById Example</title>
+<style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heading with unique ID -->
+    <h1 id="title">Welcome!</h1>
+    <h2 id="h2">Testing the button</h2>
+    <!-- Button to trigger JavaScript -->
+    <button onclick="tryMe()"> Click Me </button>
+    <button id="test" onclick="test()">Test</button>
+    
+    <script>
+        // Function that runs when button is clicked
+        function tryMe() {
+            // Step 1: Select element using getElementById
+            let heading = document.getElementById("title");
+            // Step 2: Change the text content
+            heading.innerText = "Sughnen is here";
+            // Step 3: Change style dynamically
+            heading.style.color = "blue";
+            heading.style.fontSize="49px";
+        }
+        function  test(){
+            let test = document.getElementById('h2')
+            test.innerText="solex is watching"
+        }
+    </script>
+</body>
+</html>

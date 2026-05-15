@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>My To-Do List</h1>
+
+      <div class="input-area">
+        <input type="text" id="todo-input" placeholder="Enter a task" />
+        <button id="add-btn">Add</button>
+      </div>
+
+      <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+        // document.addEventListener("clicked", ()=>{
+        //   console.log("Clicked")
+        // })
+        /**
+         * 1. listening for event on add btn
+         *
+         *
+         * **/
+        // selecting the element
+        let addBtn = document.querySelector('#add-btn')
+      addBtn.addEventListener("click", (element)=>{
+        let  todovalue = document.querySelector("#todo-input").value
+        if (todovalue == "" || todovalue ==null){
+          alert("Input a value")
+          return
+        }
+        else if (todovalue >1 ){
+          alert("You already have this task")
+          return
+        }
+        if (isNaN(todovalue) ){
+          alert("You cannot input a number")
+          return
+        }
+      })
+
+      //   let todoList = document.querySelector("#todo-list")
+      //   todoList.innerHTML += `
+      //   <li class = "task-text">${todovalue}</li>
+
+      //   `
+      //   console.log(todovalue)
+
+      // })
+
+      // TODO
+      const API_URL = 'https://jsonplaceholder.typicode.com';
+      const ENDPOINT = {
+          users: '/users',
+          todos: '/todos'
+
+      }
+
+       fetch(API_URL + ENDPOINT.todos,{
+          method: 'GET'
+      })
+      .then(res => res.json())
+      .then((data) => {
+          // let display = document.getElementById('todo-list');
+          console.log(data)
+          data.forEach((res, index) => {
+            fetch(`https://jsonplaceholder.typicode.com/user/${todo.user}`,
+              {
+                method:'GET' } )
+      .then((data)=>{
+        let display = document.getElementById('todo-list');
+      })
+              if(index < 5){
+              display.innerHTML +=  `
+        <li class = "task-text">${res.title} - ${res.user}</li>
+
+        `
+
+              }
+          })
+      })
+    </script>
+  </body>
+</html>

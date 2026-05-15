@@ -22,7 +22,81 @@
         </ul>
       </div>
       
+<script>
+  // document.addEventListener("clicked", ()=>{
+  //   console.log("Clicked")
+  // })
+  /**
+   * 1. listening for event on add btn
+   * 
+   * 
+   * **/
+  // selecting the element
+  let addBtn = document.querySelector('#add-btn')
+addBtn.addEventListener("click", (element)=>{
+  let  todovalue = document.querySelector("#todo-input").value
+  if (todovalue == "" || todovalue ==null){
+    alert("Input a value")
+    return
+  }
+  else if (todovalue >1 ){
+    alert("You already have this task")
+    return
+  }
+  if (isNaN(todovalue) ){
+    alert("You cannot input a number")
+    return
+  }
+})
+ 
+//   let todoList = document.querySelector("#todo-list")
+//   todoList.innerHTML += `
+//   <li class = "task-text">${todovalue}</li>
+  
+//   `
+//   console.log(todovalue)
 
-  <!-- <script src="./script.js"></script> -->
+// })
+
+// TODO 
+const API_URL = 'https://jsonplaceholder.typicode.com';
+const ENDPOINT = {
+    users: '/users',
+    todos: '/todos',
+    posts: '/posts'
+}
+
+ fetch(API_URL + ENDPOINT.posts,{
+    method: 'GET'
+})
+.then(res => res.json())
+.then((data) => {
+    let display = document.getElementById('todo-list');
+    // console.log(data)
+    data.forEach((res, index) => {
+      fetch(`https://jsonplaceholder.typicode.com/users/${res.userId}`).then(res=>res.json()).then((users)=>{
+        if(index < 20){
+        display.innerHTML +=  `
+  <li class = "task-text">${res.title}  -  ${users.username}</li>
+  
+  `
+  
+        }
+      })
+      
+  //       if(index < 5){
+  //       display.innerHTML +=  `
+  // <li class = "task-text">${res.title} </li>
+  
+  // `
+  
+  //       }
+    })
+})
+
+
+
+</script>
+
 </body>
 </html>

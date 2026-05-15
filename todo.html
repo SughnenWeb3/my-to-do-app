@@ -1,0 +1,19 @@
+const API_URL = 'https://jsonplaceholder.typicode.com';
+const ENDPOINT = {
+    users: '/users',
+    todos: '/todos'
+}
+
+let todos = fetch(API_URL + ENDPOINT.todos, {
+    method: 'GET'
+})
+.then(res => res.json())
+.then(data => {
+    let display = document.getElementById('display');
+    
+    data.forEach((res, index) => {
+        if(index < 8){
+        display.innerHTML += <li>${res.title}</li>
+        }
+    })
+})
