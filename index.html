@@ -43,7 +43,7 @@ addBtn.addEventListener("click", (element)=>{
     alert("You already have this task")
     return
   }
-  if (isNaN(todovalue) ){
+  if (!isNaN(todovalue) ){
     alert("You cannot input a number")
     return
   }
